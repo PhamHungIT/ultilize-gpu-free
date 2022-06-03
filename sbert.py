@@ -70,7 +70,7 @@ def classify():
 
 
 if __name__ == '__main__':
-    _, base_categories, product_names = read_data('/home/nghind/workspace/data/category_classification/product_by_categories - product_by_categories.tsv')
+    _, base_categories, product_names = read_data('product_by_categories - product_by_categories.tsv')
     base_categories = list(set(base_categories))
     # with open('categories.txt', 'w') as fw:
     #     for line in sorted(categories_uniques):

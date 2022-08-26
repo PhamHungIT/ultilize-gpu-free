@@ -10,7 +10,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
 MODEL_CONFIG = 'config/trainer/model.cfg'
-USE_GPU = False
+USE_GPU = True
 model_config = configparser.ConfigParser()
 model_config.read(MODEL_CONFIG)
 
@@ -329,11 +329,11 @@ def do_revise_samples(folder, train_file, model_name):
 
 if __name__ == '__main__':
 
-    # folder = 'data/all_category/data_run/_1M_shopee'
-    folder = "data/all_category/data_run/_1M_shopee/test_set/official_test/"
+    folder = 'data/all_category/data_run/_1M_shopee/colab'
+    # folder = "data/all_category/data_run/_1M_shopee/colab"
 
     # csv_file = "test_set/official_test/_2k_kiot_viet.csv"
-    csv_file = "_2k_kiot_viet.csv"
+    csv_file = "_1M_clean_shopee.csv"
 
     use_semhash = False
     training_with_augument = False
@@ -347,13 +347,13 @@ if __name__ == '__main__':
     
     # model_name = "model/official_model/shopee_train_token_5k_ep1.pt"
     # model_name = 'all_cate_data_preprocessed.pt'
-    model_name = 'pp_1M_shopee_token_1ep_ep1.pt'
+    model_name = 'pp_1M_shopee_token.pt'
     unknown_intent = 'UNKNOWN'
 
     # mode = 'split'
-    # mode = 'train'
+    mode = 'train'
     # mode = 'train-test'
-    mode = 'test-batch'
+    # mode = 'test-batch'
     # mode = "test"
     # mode = 'infer-batch'
     # mode = 'infer_file' 

@@ -1,0 +1,6 @@
+BROKER_REDIS = 'Redis'
+BROKER_RABBITMQ = 'RabbitMQ'
+BROKER_SQS = 'SQS'
+
+EV_MODE_QUEUE = 'queue'
+EV_MODE_PUBSUB = 'pubsub'

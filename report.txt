@@ -1,0 +1,11 @@
+                    precision    recall  f1-score   support
+
+Điện tử - Điện máy       0.98      0.98      0.98      1469
+           Mỹ phẩm       0.99      0.89      0.94     18552
+           Mẹ & Bé       0.96      0.89      0.93      6909
+           unknown       0.00      1.00      0.00         0
+        Thời trang       0.97      0.96      0.96      3880
+
+          accuracy                           0.91     30810
+         macro avg       0.78      0.95      0.76     30810
+      weighted avg       0.98      0.91      0.94     30810

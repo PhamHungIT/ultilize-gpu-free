@@ -1,0 +1,2 @@
+LANGUAGE_VI = 'vi'
+LANGUAGE_EN = 'en'

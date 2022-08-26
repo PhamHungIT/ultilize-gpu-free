@@ -1,0 +1,1 @@
+class BreakLoop(Exception): pass

@@ -8,6 +8,7 @@ from core import model_wrapper
 from utils import write_csv, write_csv_predicted, write_csv_tuple
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
+from argparse import ArgumentParser
 
 MODEL_CONFIG = 'config/trainer/model.cfg'
 USE_GPU = True
@@ -101,7 +102,8 @@ def do_train_test_5fold(folder, train_file, model_name, unknown_intent, use_semh
 
 
 def do_train(folder, train_file, model_name, unknown_intent, use_semhash):
-    model_path = os.path.join(folder, model_name)
+#     model_path = os.path.join(folder, model_name)
+    model_path = "/content/drive/MyDrive/Colab Notebooks/category_classify/shopee/model/" + model_name
 
     train_data = prepare_data(os.path.join(folder, train_file))
     model_wrapper.run_train_on_json_data(train_data, model_path, model_config['intent'],
@@ -330,10 +332,12 @@ def do_revise_samples(folder, train_file, model_name):
 if __name__ == '__main__':
 
     folder = 'data/all_category/data_run/_1M_shopee/colab'
-    # folder = "data/all_category/data_run/_1M_shopee/colab"
+    parser = ArgumentParser(add_help=False)
 
-    # csv_file = "test_set/official_test/_2k_kiot_viet.csv"
-    csv_file = "_1M_clean_shopee.csv"
+    parser.add_argument('-n', '--name_train', type=str)
+    args = parser.parse_args()
+    
+    csv_file = args.name_train
 
     use_semhash = False
     training_with_augument = False

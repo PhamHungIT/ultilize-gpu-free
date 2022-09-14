@@ -334,10 +334,11 @@ if __name__ == '__main__':
     folder = 'data/all_category/data_run/_1M_shopee/colab'
     parser = ArgumentParser(add_help=False)
 
-    parser.add_argument('-n', '--name_train', type=str)
+    parser.add_argument('-t', '--train_name', type=str)
+    parser.add_argument('-m', '--model_name', type=str)
     args = parser.parse_args()
     
-    csv_file = args.name_train
+    csv_file = args.train_name
 
     use_semhash = False
     training_with_augument = False
@@ -351,7 +352,7 @@ if __name__ == '__main__':
     
     # model_name = "model/official_model/shopee_train_token_5k_ep1.pt"
     # model_name = 'all_cate_data_preprocessed.pt'
-    model_name = 'pp_1M_shopee_token.pt'
+    model_name = args.model_name
     unknown_intent = 'UNKNOWN'
 
     # mode = 'split'

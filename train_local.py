@@ -37,7 +37,7 @@ def build_data(samples, intents):
 
 
 def prepare_data(csv_file):
-    df = pd.read_csv(csv_file, delimiter='\t')
+    df = pd.read_csv(csv_file)
     samples = df['sample'].values.tolist()
     intents = df['label'].values.tolist()
 
